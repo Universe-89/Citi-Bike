@@ -1,16 +1,9 @@
-# DATA ENGINEERING ZOOMCAMP Project - 
-
-## Overview
-This project was executed as a part of the [Data Engineering Zoomcamp](https://github.com/DataTalksClub/data-engineering-zoomcamp) 
-course held by [DataTalks.Club](https://datatalks.club/). 
-The goal of this project is to apply everything we learned in this course and build an end-to-end data pipeline.
+# Citi Bike - 
 
 
 The goals of the project are:
 * develop a data pipeline that will help to organize data processing in a batch manner (on a monthly basis);
 * build analytical dashboard that will make it easy to discern the trends and digest the insights.
-
-The period of the data processing will cover from 2018 to 2020.
 
 ## Dataset used in the project
 The data of Citi Bike Trip Histories could be found [here](https://s3.amazonaws.com/tripdata/index.html) in a compressed format.
@@ -116,9 +109,6 @@ There are 3 configuration files:
 * [variables.tf](terraform/variables.tf) - contains variables to make your configuration more dynamic and flexible;
 * [main.tf](terraform/main.tf) - is a key configuration file consisting of several sections.
 
-[Here](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/week_1_basics_n_setup/1_terraform_gcp/1_terraform_overview.md)
-you can find the detailed description of each section.
-
 Now you can use the steps below to generate resources inside the GCP:
 1. Move to the [terraform folder](terraform) using bash command `cd`.
 2. Run `terraform init` command to initialize the configuration.
@@ -135,7 +125,7 @@ The next steps provide you with the instructions of running Apache Airflow, whic
 orchestration, taking into account that you have already set up a GCP account.
 
 You can run Airflow locally using docker-compose. Before running it, please make sure you have at least 5 GB of free RAM.
-Alternatively, you can launch Airflow on a virtual machine in GCP (in this case, please refer to [this video](https://www.youtube.com/watch?v=ae-CV2KfoN0&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=16)). 
+Alternatively, you can launch Airflow on a virtual machine in GCP
 
 #### Setup
 Go to the [airflow](airflow) subdirectory: here you can find the [Dockerfile](airflow/Dockerfile) and the lightweight version
@@ -173,20 +163,13 @@ We are going to use [dbt](https://www.getdbt.com/) for data transformation in DW
 
 First you will need to create a dbt Cloud account (if you don't already have one) using [this link](https://www.getdbt.com/signup/) 
 and connect to your BigQuery by following [these instructions](https://docs.getdbt.com/docs/dbt-cloud/cloud-configuring-dbt-cloud/cloud-setting-up-bigquery-oauth).
-You can find more detailed instructions [here](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/week_4_analytics_engineering/dbt_cloud_setup.md).
 
-Note that:
-* you can fork or copy an existing dbt project located in the [separate folder](dbt) and use a link to the forked/copied version if necessary; 
-* you need to check that BigQuery already has areas (datasets) for staging and production dbt models (`citibike_dev` and `citibike_prod` in our case);
-* you should modify [profiles.yaml](dbt/profiles.yml) file according to your dataset names and credentials.
 
-### 6.ERRORS 
-if you are getting any errors in Airflow make sure all the variables are correct and just to make sure, do a find and replace on your GCP project id with my GCP project id - (dtc-de-358222) with your fav IDE - Visual Studio, PyCharm, Etc   
 
-### 7.Google Data Studio
+### 6.Google Data Studio
 When the production models are ready, you can start building a dashboard.
 
-The [dashboard](https://datastudio.google.com/s/u5AyaHHljbo) is built using Google Data Studio. The process of the such dashboard creating in Google Data Studio is described in detail in [this video](https://www.youtube.com/watch?v=39nLTs74A3E&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=43).
+The [dashboard](https://datastudio.google.com/s/u5AyaHHljbo) is built using Google Data Studio.
 
 And the final dashboard includes the following diagrams:
 * Gender distribution among the trips
