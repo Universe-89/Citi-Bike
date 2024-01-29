@@ -1,0 +1,25 @@
+citibike_profile:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: dtc-de-358222
+      dataset: citibike_dev
+      location: asia-south1
+      threads: 4
+      keyfile: /.google/credentials/dtc-de-358222-0c47441e2131.json
+      priority: interactive
+      timeout_seconds: 600
+      retries: 1
+    prod:
+      type: bigquery
+      method: service-account
+      project: dtc-de-358222
+      dataset: citibike_prod
+      location: asia-south1
+      threads: 4
+      keyfile: /.google/credentials/dtc-de-358222-0c47441e2131.json
+      priority: interactive
+      timeout_seconds: 600
+      retries: 1
