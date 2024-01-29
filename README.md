@@ -1,4 +1,4 @@
-# Citi Bike - 
+# Citi Bike
 
 
 The goals of the project are:
